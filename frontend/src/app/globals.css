@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --accent: #38bdf8;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --accent-primary: #38bdf8;
+  --accent-secondary: #818cf8;
+  --btn-number: #334155;
+  --btn-operator: #475569;
+  --btn-special: #0ea5e9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617;
+    --foreground: #f8fafc;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: radial-gradient(circle at top left, #1e293b, #0f172a);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.calc-btn {
+  @apply flex items-center justify-center text-xl font-medium transition-all duration-200 rounded-2xl active:scale-95 h-16 w-full;
+}
+
+.calc-btn-num {
+  @apply bg-slate-800/50 hover:bg-slate-700/50 text-slate-200;
+}
+
+.calc-btn-op {
+  @apply bg-sky-500/20 hover:bg-sky-500/30 text-sky-400;
+}
+
+.calc-btn-accent {
+  @apply bg-sky-500 hover:bg-sky-400 text-white shadow-lg shadow-sky-500/20;
+}
